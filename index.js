@@ -71,8 +71,21 @@ function heal(maxHp, currentHp, healAmount) {
  * @returns {number} the character's proficiency bonus
  */
 function getProficiencyBonus(level, rank) {
-  return 
-}
+  if (rank === "untrained") {
+    return level;
+} 
+  else if (rank === "trained") {
+    return level + 2;
+} 
+  else if (rank === "expert") {
+    return level + 4;
+} 
+  else if (rank === "master") {
+    return level + 6;
+} 
+  else if (rank === "legendary"){
+    return level + 8;
+} }
 
 /**
  * A creature can get a bonus to its armor class (AC) by taking cover.
@@ -85,7 +98,7 @@ function getProficiencyBonus(level, rank) {
  * @returns {number} the cover bonus to AC
  */
 function getCoverBonus(behindObstacle, takingCover) {
-  // TODO
+  return behindObstacle + 2 || 
 }
 
 /**
